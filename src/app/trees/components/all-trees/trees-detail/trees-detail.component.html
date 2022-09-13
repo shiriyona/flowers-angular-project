@@ -1,0 +1,21 @@
+<div class="eachItem">
+    <div class="row">
+        <div class="col-xs-12">
+          <button class="close" (click)="onTreeFullList()"></button> 
+          <img
+            [src]="tree.imagePath" style="width: 100%;"
+            alt="{{ tree.name }}"
+            class="img-responsive">
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-xs-12">
+        <h1>{{ tree.name }}</h1>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-xs-12">
+        {{ tree.description }}
+    </div>
+    </div>
+</div>

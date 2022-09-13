@@ -1,0 +1,11 @@
+<div class="listOfItems">
+    <div class="row">
+      <div class="col-xs-12">
+        <app-tree-item 
+          *ngFor="let treeEl of trees"    
+          [tree]="treeEl"
+          (treeSelected)="onTreeItemSelected($event)">
+        </app-tree-item>
+      </div>
+   </div>
+</div>

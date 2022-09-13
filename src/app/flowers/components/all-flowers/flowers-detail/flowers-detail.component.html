@@ -1,0 +1,21 @@
+<div class="eachItem">
+    <div class="row">
+        <div class="col-xs-12">
+          <button class="close" (click)="onFlowerFullList()"></button> 
+          <img
+            [src]="flower.imagePath" style="width: 100%;"
+            alt="{{ flower.name }}"
+            class="img-responsive">
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-xs-12">
+        <h1>{{ flower.name }}</h1>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-xs-12">
+        {{ flower.description }}
+    </div>
+    </div>
+</div>

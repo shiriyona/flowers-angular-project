@@ -1,0 +1,36 @@
+<div class="col-xs-12">
+  <h4>flowers</h4>
+  <mat-form-field appearance="fill" (click)="getAllFlowersType()">
+    <mat-label>flower</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let flower of flowers" [value]="flowers"
+      (click)="selectTypeOfFlower(flower)">
+      {{flower}}
+    </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="parentFlower">   
+  <div class="childFlowerList fullScreen" [ngClass]="{'partScreen': isSelectedItem , 'fullScreen': !isSelectedItem}">
+    <app-flowers-list [flowers]="currentLst" (flowerSelected)="flowerDetails($event)"></app-flowers-list>   
+  </div>
+  <div class="childFlowerItem fullScreen">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="eachItem">
+        <app-flowers-detail
+        (removeSelectedItem)="onRemoveSelectedItem($event)"
+        *ngIf="flowerSelected; else infoText"
+        [flower]="flowerSelected">
+        </app-flowers-detail>
+      </div>
+    </div>
+      <ng-template #infoText>
+        <p>Please select a flower!</p>
+      </ng-template>  
+   </div>  
+ </div>
+</div>         
+
+
+

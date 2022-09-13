@@ -1,0 +1,11 @@
+<div class="listOfItems">
+    <div class="row">
+      <div class="col-xs-12">
+        <app-flower-item 
+          *ngFor="let flowerEl of flowers"    
+          [flower]="flowerEl"
+          (flowerSelected)="onFlowerItemSelected($event)">
+        </app-flower-item>
+      </div>
+   </div>
+</div>
