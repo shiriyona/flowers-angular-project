@@ -1,9 +1,9 @@
 <div class="col-xs-12">
-  <h4>flowers</h4>
+  <h4 class="flowersTitle">Flowers</h4>
   <mat-form-field appearance="fill" (click)="getAllFlowersType()">
     <mat-label>flower</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let flower of flowers" [value]="flowers"
+    <mat-select value="all flowers">
+      <mat-option *ngFor="let flower of flowers" [value]="flower"
       (click)="selectTypeOfFlower(flower)">
       {{flower}}
     </mat-option>
@@ -20,17 +20,18 @@
       <div class="eachItem">
         <app-flowers-detail
         (removeSelectedItem)="onRemoveSelectedItem($event)"
-        *ngIf="flowerSelected; else infoText"
+        *ngIf="flowerSelected"
         [flower]="flowerSelected">
         </app-flowers-detail>
       </div>
     </div>
       <ng-template #infoText>
         <p>Please select a flower!</p>
-      </ng-template>  
+      </ng-template> 
    </div>  
  </div>
-</div>         
+</div> 
+
 
 
 

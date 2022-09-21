@@ -10,6 +10,7 @@ import { FlowersService } from './sevices/flowers.sevice';
 import { FlowersListComponent } from './components/flowers-list/flowers-list.component';
 import { FlowerItemComponent } from './components/flowers-list/flower-item/flower-item.component';
 import { FlowersDetailComponent } from './components/all-flowers/flowers-detail/flowers-detail.component';
+import { AmountToStringPipes } from './pipes/amount-to-string-pipe';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FlowersDetailComponent } from './components/all-flowers/flowers-detail/
     AllFlowersComponent,
     FlowersListComponent,
     FlowerItemComponent,
-    FlowersDetailComponent
+    FlowersDetailComponent,
+    AmountToStringPipes
   ],
   imports: [
     CommonModule,
@@ -28,6 +30,6 @@ import { FlowersDetailComponent } from './components/all-flowers/flowers-detail/
     MatInputModule,
     FlowersRoutingModule
   ],
-  providers: [ FlowersService ],
+  providers: [ FlowersService, AmountToStringPipes ],
 })
 export class FlowersModule { }

@@ -16,11 +16,13 @@ export class TreesService {
         'Palm1',
         'this is Palm1 description',
         '',
+        300
     ),
       new Tree(
         'Palm2',
         'this is Palm2 description',
         '',
+        200
       )
     ];
 
@@ -29,11 +31,13 @@ export class TreesService {
         'oak1',
         'this is oak1 description',
         '',
+        180
     ),
       new Tree(
         'oak2',
         'this is oak2 description',
         '',
+        230
       )
     ];
 
