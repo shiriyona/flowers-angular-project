@@ -23,15 +23,15 @@ export class AllFlowersComponent implements OnInit, OnDestroy {
 
   constructor(private flowersService: FlowersService,
     private ref: ChangeDetectorRef) { 
-      setInterval(() => {
-        this.numberOfTicks++;
-        // require view to be updated
-        // this.ref.markForCheck();
-      }, 1000);
+      // setInterval(() => {
+      //   this.numberOfTicks++;
+      //   // require view to be updated
+      //   // this.ref.markForCheck();
+      // }, 1000);
     }
 
   ngOnInit(): void {
-    var item = this.flowers.find(x => x.value == "all flowers");
+    var item = this.flowers?.find(x => x == "all flowers");
     this.selectTypeOfFlower(item); 
     // this.ref.markForCheck;
   }
@@ -70,9 +70,9 @@ export class AllFlowersComponent implements OnInit, OnDestroy {
     this.flowerSelected = null; 
   }
 
-  @Input() prop: number = 0;
+  // @Input() prop: number = 0;
 
-  ngOnChanges(changes: SimpleChanges) {
-    changes.prop;
-  }
+  // ngOnChanges(changes: SimpleChanges) {
+  //   changes.prop;
+  // }
 }

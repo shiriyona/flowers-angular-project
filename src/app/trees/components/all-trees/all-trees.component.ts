@@ -22,7 +22,7 @@ export class AllTreesComponent implements OnInit {
   constructor(private treesService: TreesService) { }
 
   ngOnInit(): void {
-    var item = this.trees.find(x => x.value == "all trees");
+    var item = this.trees?.find(x => x == "all trees");
     this.selectTypeOfTree(item); 
   }
 
@@ -49,7 +49,6 @@ export class AllTreesComponent implements OnInit {
     if(this.loadAllTreesTypeByTypeSubscription) {
       this.loadAllTreesTypeByTypeSubscription.unsubscribe();
     }
-
       if(this.loadTreeTypeByTypeSubscription) {
         this.loadTreeTypeByTypeSubscription.unsubscribe();
       }
@@ -59,6 +58,5 @@ export class AllTreesComponent implements OnInit {
     this.isSelectedItem = false;  
     this.treeSelected = null; 
   }
-
 }
 

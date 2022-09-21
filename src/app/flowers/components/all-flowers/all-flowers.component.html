@@ -1,7 +1,7 @@
 <div class="col-xs-12">
   <h4 class="flowersTitle">Flowers</h4>
   <mat-form-field appearance="fill" (click)="getAllFlowersType()">
-    <mat-label>flower</mat-label>
+    <mat-label *ngIf="flowerSelected">flower</mat-label>
     <mat-select value="all flowers">
       <mat-option *ngFor="let flower of flowers" [value]="flower"
       (click)="selectTypeOfFlower(flower)">

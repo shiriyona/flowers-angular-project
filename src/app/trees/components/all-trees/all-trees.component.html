@@ -1,6 +1,6 @@
 <div class="col-xs-12">
     <h4 class="treesTitle">Trees</h4>
-    <mat-form-field (click)="getAllTreesType()">
+    <mat-form-field  appearance="fill" (click)="getAllTreesType()">
       <mat-label *ngIf="treeSelected">tree</mat-label>
       <mat-select value="all trees">
         <mat-option *ngFor="let tree of trees" [value]="tree"
