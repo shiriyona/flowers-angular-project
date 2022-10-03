@@ -1,0 +1,26 @@
+<div class="eachItem">
+    <div class="row">
+        <div class="col-xs-12">
+          <button class="close" (click)="onSyntheticGrassFullList()"></button> 
+          <img
+            [src]="syntheticGrass.imagePath" style="width: 100%;"
+            alt="{{ syntheticGrass.name }}"
+            class="img-responsive">
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-xs-12">
+        <h1>{{ syntheticGrass.name }}</h1>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-xs-12">
+        {{ syntheticGrass.description }}
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+          <strong>price: {{ syntheticGrass.price }} </strong>   
+        </div>
+      </div>
+</div>

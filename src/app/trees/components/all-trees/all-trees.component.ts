@@ -27,36 +27,37 @@ export class AllTreesComponent implements OnInit {
   }
 
   getAllTreesType() {
-   this.loadAllTreesTypeByTypeSubscription =  this.treesService.onAllTreesType().subscribe(res => {
-      this.trees = res;
-    });
-  }
-
-  treeDetails(tree: Tree) {
-    this.isSelectedItem = true;
-    this.treeSelected = tree
-  }
-
-  selectTypeOfTree(typeOfTree) {
-    this.isSelectedItem = false;  
-    this.treeSelected = null; 
-   this.loadTreeTypeByTypeSubscription =  this.treesService.loadTreeByType(typeOfTree).subscribe(res => {
-      this.currentLst = res;
-    });
-  }
-
-  ngOnDestroy(): void {
-    if(this.loadAllTreesTypeByTypeSubscription) {
-      this.loadAllTreesTypeByTypeSubscription.unsubscribe();
-    }
-      if(this.loadTreeTypeByTypeSubscription) {
-        this.loadTreeTypeByTypeSubscription.unsubscribe();
-      }
-  }
-
-  onRemoveSelectedItem(removeSelectedItem) {
-    this.isSelectedItem = false;  
-    this.treeSelected = null; 
-  }
+    this.loadAllTreesTypeByTypeSubscription =  this.treesService.onAllTreesType().subscribe(res => {
+       this.trees = res;
+     });
+   }
+ 
+   treeDetails(tree: Tree) {
+     this.isSelectedItem = true;
+     this.treeSelected = tree
+   }
+ 
+   selectTypeOfTree(typeOfTree) {
+     this.isSelectedItem = false;  
+     this.treeSelected = null; 
+    this.loadTreeTypeByTypeSubscription =  this.treesService.loadTreeByType(typeOfTree).subscribe(res => {
+       this.currentLst = res;
+     });
+   }
+ 
+   ngOnDestroy(): void {
+     if(this.loadAllTreesTypeByTypeSubscription) {
+       this.loadAllTreesTypeByTypeSubscription.unsubscribe();
+     }
+ 
+       if(this.loadTreeTypeByTypeSubscription) {
+         this.loadTreeTypeByTypeSubscription.unsubscribe();
+       }
+   }
+ 
+   onRemoveSelectedItem(removeSelectedItem) {
+     this.isSelectedItem = false;  
+     this.treeSelected = null; 
+   } 
 }
 

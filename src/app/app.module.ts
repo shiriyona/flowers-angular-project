@@ -13,12 +13,13 @@ import { FlowersModule } from './flowers/flowers.module';
 import { OrderModule } from './order/order.module';
 import { InformationModule } from './information/information.module';
 import { TreesModule } from './trees/trees.module';
+import { SyntheticGrassModule } from './synthetic-grass/synthetic-grass.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +34,8 @@ import { TreesModule } from './trees/trees.module';
     FlowersModule,
     OrderModule,
     InformationModule,
-    TreesModule
+    TreesModule,
+    SyntheticGrassModule
   ],
   providers: [],
   bootstrap: [AppComponent]

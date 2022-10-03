@@ -1,0 +1,11 @@
+<div class="listOfItems">
+    <div class="row">
+      <div class="col-xs-12">
+        <app-synthetic-grass-item 
+          *ngFor="let syntheticGrass of syntheticGrasses"    
+          [syntheticGrass]="syntheticGrassEl"
+          (syntheticGrassSelected)="onSyntheticGrassItemSelected($event)">
+        </app-synthetic-grass-item>
+      </div>
+   </div>
+</div>

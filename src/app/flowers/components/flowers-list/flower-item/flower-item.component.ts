@@ -10,7 +10,6 @@ export class FlowerItemComponent implements OnInit {
   @Input() flower: Flower;
   @Output() flowerSelected = new EventEmitter<Flower>();
 
-
   constructor() { }
 
   ngOnInit(): void {

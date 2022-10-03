@@ -24,4 +24,5 @@ export class FlowersListComponent implements OnInit {
     this.isSelectedItem = true;
     this.flowerSelected.emit(flower);
   }
+  
 }
