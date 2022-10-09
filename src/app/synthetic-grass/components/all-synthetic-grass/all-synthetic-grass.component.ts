@@ -15,28 +15,26 @@ export class AllSyntheticGrassComponent implements OnInit {
   @Input() removeSelectedItem;
   isSelectedItem: boolean = false;
 
-  loadAllSyntheticGrassesTypeByTypeSubscription: Subscription;  
+  loadAllSyntheticGrassTypeByTypeSubscription: Subscription;  
   
   loadSyntheticGrassTypeByTypeSubscription: Subscription;
 
-  constructor(private syntheticGrassService: SyntheticGrassService) { 
- 
-    }
+  constructor(private syntheticGrassService: SyntheticGrassService) {  }
 
   ngOnInit(): void {
     var item = this.syntheticGrasses?.find(x => x == "all synthetic grasses");
     this.selectTypeOfSyntheticGrass(item); 
   }
 
-  getAllSyntheticGrassesType() {
-   this.loadAllSyntheticGrassesTypeByTypeSubscription =  this.syntheticGrassService.onAllSyntheticGrassesType().subscribe(res => {
+  getAllSyntheticGrassType() {
+   this.loadAllSyntheticGrassTypeByTypeSubscription =  this.syntheticGrassService.onAllSyntheticGrassType().subscribe(res => {
       this.syntheticGrasses = res;
     });
   }
 
   syntheticGrassDetails(syntheticGrass: SyntheticGrass) {
     this.isSelectedItem = true;
-    this.syntheticGrassSelected = syntheticGrass;
+    this.syntheticGrassSelected = syntheticGrass
   }
 
   selectTypeOfSyntheticGrass(typeOfSyntheticGrass) {
@@ -48,8 +46,8 @@ export class AllSyntheticGrassComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    if(this.loadAllSyntheticGrassesTypeByTypeSubscription) {
-      this.loadAllSyntheticGrassesTypeByTypeSubscription.unsubscribe();
+    if(this.loadAllSyntheticGrassTypeByTypeSubscription) {
+      this.loadAllSyntheticGrassTypeByTypeSubscription.unsubscribe();
     }
 
       if(this.loadSyntheticGrassTypeByTypeSubscription) {
@@ -61,4 +59,10 @@ export class AllSyntheticGrassComponent implements OnInit {
     this.isSelectedItem = false;  
     this.syntheticGrassSelected = null; 
   }
+
+  // @Input() prop: number = 0;
+
+  // ngOnChanges(changes: SimpleChanges) {
+  //   changes.prop;
+  // }
 }

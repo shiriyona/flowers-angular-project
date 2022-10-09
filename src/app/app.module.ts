@@ -14,6 +14,7 @@ import { OrderModule } from './order/order.module';
 import { InformationModule } from './information/information.module';
 import { TreesModule } from './trees/trees.module';
 import { SyntheticGrassModule } from './synthetic-grass/synthetic-grass.module';
+import { BushesModule } from './bushes/bushes.module';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { SyntheticGrassModule } from './synthetic-grass/synthetic-grass.module';
     OrderModule,
     InformationModule,
     TreesModule,
+    BushesModule,
     SyntheticGrassModule
   ],
   providers: [],

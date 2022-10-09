@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Flower } from '../../model/flowers.model';
 import { FlowersService } from '../../sevices/flowers.sevice';
@@ -44,7 +45,7 @@ export class AllFlowersComponent implements OnInit, OnDestroy {
 
   flowerDetails(flower: Flower) {
     this.isSelectedItem = true;
-    this.flowerSelected = flower
+    this.flowerSelected = flower;
   }
 
   selectTypeOfFlower(typeOfFlower) {

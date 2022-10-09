@@ -1,0 +1,11 @@
+<div class="listOfItems">
+    <div class="row">
+      <div class="col-xs-12">
+        <app-bush-item 
+          *ngFor="let bushEl of bushes"    
+          [bush]="bushEl"
+          (bushSelected)="onb=BushItemSelected($event)">
+        </app-bush-item>
+      </div>
+   </div>
+</div>

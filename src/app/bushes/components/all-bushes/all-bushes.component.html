@@ -1,0 +1,31 @@
+<h4>Basic mat-select</h4>
+<mat-form-field appearance="fill" (click)="getAllBushesType()">
+  <mat-label *ngIf="bushSelected">bushes</mat-label>
+  <mat-select value="all bushes">
+    <mat-option *ngFor="let bush of bushes" [value]="bush.value" 
+    (click)="selectTypeOfBush(bush)">
+      {{bush.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<div class="parentBush">   
+    <div class="childBushList fullScreen" [ngClass]="{'partScreen': isSelectedItem , 'fullScreen': !isSelectedItem}">
+      <app-bushes-list [bushes]="currentLst" (bushSelected)="bushDetails($event)"></app-bushes-list>   
+    </div>
+    <div class="childBushItem fullScreen">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="eachItem">
+          <app-bushes-detail
+          (removeSelectedItem)="onRemoveSelectedItem($event)"
+          *ngIf="bushSelected"
+          [bush]="bushSelected">
+          </app-bushes-detail>
+        </div>
+      </div>
+        <ng-template #infoText>
+          <p>Please select a bush!</p>
+        </ng-template> 
+     </div>  
+   </div>
+  </div> 

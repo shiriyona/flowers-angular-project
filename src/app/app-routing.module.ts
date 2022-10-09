@@ -6,7 +6,8 @@ const appRoutes: Routes = [
     { path: 'information', loadChildren: () => import('./information/information.module').then(m => m.InformationModule)},
     { path: 'order', loadChildren: () => import('./order/order.module').then(m => m.OrderModule)},
     { path: 'trees', loadChildren: () => import('./trees/trees.module').then(m => m.TreesModule)},
-    { path: 'syntheticGrass', loadChildren: () => import('./Synthetic-grass/Synthetic-grass.module').then(m => m.SyntheticGrassModule)},
+    { path: 'bushes', loadChildren: () => import('./bushes/bushes.module').then(m => m.BushesModule)},
+    { path: 'synthetic-grass', loadChildren: () => import('./synthetic-grass/synthetic-grass.module').then(m => m.SyntheticGrassModule)},
     {
         path: '',
         redirectTo: 'all flowers',

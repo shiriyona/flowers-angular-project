@@ -1,4 +1,4 @@
-export class Flower {
+export class Bush {
     public name: string;
     public description: string;
     public imagePath: string;

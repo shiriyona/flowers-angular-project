@@ -1,0 +1,26 @@
+<div class="eachItem">
+    <div class="row">
+        <div class="col-xs-12">
+          <button class="close" (click)="onBushFullList()"></button> 
+          <img
+            [src]="bush.imagePath" style="width: 100%;"
+            alt="{{ bush.name }}"
+            class="img-responsive">
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-xs-12">
+        <h1>{{ bush.name }}</h1>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-xs-12">
+        {{ bush.description }}
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+          <strong>price: {{ bush.price }} </strong>   
+        </div>
+      </div>
+</div>

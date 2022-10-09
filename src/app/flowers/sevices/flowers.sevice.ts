@@ -6,57 +6,144 @@ export class FlowersService {
 
    flowersType: string[]= [
         'all flowers',
-        'snapdragon',
-        'tropical' 
+        'summer',
+        'winter',
+        'multi seasonal' 
       ];
-      allFlowers
 
-    private roses: Flower[] = [
+      allFlowers;
+
+    private winter: Flower[] = [
       new Flower(
-        'rose1',
-        'this is rose1 description',
-        'https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509__340.jpg',
+        'vinca',
+        'a winter flower exists in all colors',
+        '../../../../assets/img/my-vinca-flower.jpg',
         50
     ),
-      new Flower('rose2',
-        'this is rose2 description',
-        'https://cdn.pixabay.com/photo/2013/07/21/13/00/rose-165819__340.jpg',
-        58
-      )
-    ];
-
-    private tropicals: Flower[] = [
       new Flower(
-        'Tropical1',
-        'this is Tropical1 description',
-        'https://i.vimeocdn.com/video/1008844994-6476435f2dcb0ec69f4dd8fa355fb3eb11d86420d0b985ebf6b26e7916172ba7-d_640x360.jpg',
-        68
+        'tagetes',
+        'a winter flower exists in orange and yellow',
+        '../../../../assets/img/my-tagetes-flower.jpg',
+        58
+      ),
+      new Flower(
+      'petunia',
+      'a winter flower exists in purple red white and lilac',
+      '../../../../assets/img/my-petunia-flower.jpg',
+      58
     ),
-      new Flower('Tropical2',
-        'this is Tropical2 description',
-        'https://i.vimeocdn.com/video/1405420561-7c90de9556c154b6a5ae18f3c7781fc7cb4e64a3688dedefe329c764f33f6962-d_640x360.jpg',
-        90
-      )
-    ];
+    new Flower(
+    'portulca',
+    'a winter flower exists in red pink and yellow',
+    '../../../../assets/img/my-portulca-flower.jpg',
+    58
+    ),
+    new Flower(
+    'celosia',
+    'a winter flower exists in red, pink, purple, orange and yellow',
+    '../../../../assets/img/my-celosia-flower.jpg',
+    58
+    ),
+    new Flower(
+    'cynicism ',
+    'a winter flower exists in pink, orange and yellow',
+    '../../../../assets/img/my-cynicism-flower.jpg',
+    58
+    )   
+  ];
+
+  private summer: Flower[] = [
+    new Flower(
+      'viola tricolor',
+      'a summer flower exists in purple, white, red and yellow',
+      '../../../../assets/img/my-viola-tricolor-flower.jpg',
+      68
+    ),
+    new Flower(
+      'antirrhinum',
+      'a summer flower exists in purple, pink, orange, white, red and yellow',
+      '../../../../assets/img/my-viola-tricolor-flower.jpg',
+      90
+    ),
+    new Flower(
+    'lobularia maritimam',
+    'a summer flower exists in purple and white',
+    '../../../../assets/img/my-lobularia-maritimam-flower.jpg',
+    90
+    ),
+  new Flower(
+  'cyclamen',
+  'a summer flower exists in purple, pink, orange, white and red',
+  '../../../../assets/img/my-cyclamen-flower.jpg',
+  90
+  ),
+new Flower(
+'tropaeolum majus',
+'a summer flower exists in purple, pink, orange, white, red and yellow',
+'../../../../assets/img/my-tropaeolum-majus-flower.jpg',
+90
+)
+];
+
+private multiSeasonal: Flower[] = [
+  new Flower(
+    'Geranium',
+    'פרח חורפי קיים בכל הצבעים',
+    '../../../../assets/img/my-tropaeolum-majus-flower.jpg',
+    50
+),
+  new Flower('טגטס',
+    'this is rose2 description',
+    '../../../../assets/img/my-tropaeolum-majus-flower.jpg',
+    58
+  ),
+  new Flower('פטוניה',
+  'this is rose2 description',
+  '../../../../assets/img/my-tropaeolum-majus-flower.jpg',
+  58
+),
+new Flower('פורטולקה',
+'this is rose2 description',
+'../../../../assets/img/my-tropaeolum-majus-flower.jpg',
+58
+),
+new Flower('צולוסיה מחשיפה',
+'this is rose2 description',
+'../../../../assets/img/my-tropaeolum-majus-flower.jpg',
+58
+),
+new Flower('ציניה עדינה',
+'this is rose2 description',
+'../../../../assets/img/my-tropaeolum-majus-flower.jpg',
+58
+)   
+];
+
 
     onAllFlowersType():Observable<any> {
         return of(this.flowersType.slice());
     }
 
     allItem() {
-      this.allFlowers = this.allFlowers.push(Flower, this.roses, this.tropicals);
+      this.allFlowers = this.allFlowers.push(Flower, this.winter, this.summer);
     }
 
     loadFlowerByType(flowerType):Observable<any>  { 
         switch(flowerType) {
             case 'all flowers': 
-            return of([...this.roses, ...this.tropicals]);
+            return of([...this.winter, ...this.summer, ...this.multiSeasonal]);
             console.log()
-            case 'all flowers': return of(this.allFlowers.slice())
-            case 'rose': return of(this.roses.slice()); 
-            case 'tropical': return of(this.tropicals.slice());
-        }
-        return of([...this.roses, ...this.tropicals]);
-            console.log()
+            break;
+            case 'winter': return of(this.winter.slice());
+            break;
+            case 'summer': return of(this.summer.slice());
+            break;
+            case 'multi seasonal': return of(this.multiSeasonal.slice());
+            break; 
+            default:
+              return of([...this.winter, ...this.summer, ...this.multiSeasonal]);
+              console.log()
+            break;
+         }
     }
 }

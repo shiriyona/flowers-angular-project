@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AllFlowersComponent } from './components/all-flowers/all-flowers.component';
 
 
-
 const routes: Routes = [
     { path: 'all-flowers', component: AllFlowersComponent },
     {

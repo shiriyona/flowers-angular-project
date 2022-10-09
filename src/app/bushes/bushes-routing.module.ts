@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AllSyntheticGrassComponent } from './components/all-synthetic-grass/all-synthetic-grass.component';
+import { AllBushesComponent } from './components/all-bushes/all-bushes.component';
 
 
 const routes: Routes = [
-    { path: 'all-synthetic-grass', component: AllSyntheticGrassComponent },
+    { path: 'all-bushes', component: AllBushesComponent },
     {
         path: '',
-        redirectTo: 'all-synthetic-grass',
+        redirectTo: 'all-bushes',
         pathMatch: 'full'
     }
 ];
@@ -16,6 +16,6 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
   })
-  export class SyntheticGrassRoutingModule {
+  export class BushesRoutingModule {
   
   }

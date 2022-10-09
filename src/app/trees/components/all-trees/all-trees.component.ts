@@ -41,7 +41,7 @@ export class AllTreesComponent implements OnInit {
      this.isSelectedItem = false;  
      this.treeSelected = null; 
     this.loadTreeTypeByTypeSubscription =  this.treesService.loadTreeByType(typeOfTree).subscribe(res => {
-       this.currentLst = res;
+      this.currentLst = res;
      });
    }
  
