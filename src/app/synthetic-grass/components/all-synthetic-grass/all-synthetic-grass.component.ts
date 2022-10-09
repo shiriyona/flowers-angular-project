@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SyntheticGrass } from '../../model/synthetic-grass.model';
 import { SyntheticGrassService } from '../../services/synthetic-grass.service';
@@ -6,9 +6,10 @@ import { SyntheticGrassService } from '../../services/synthetic-grass.service';
 @Component({
   selector: 'app-all-synthetic-grass',
   templateUrl: './all-synthetic-grass.component.html',
-  styleUrls: ['./all-synthetic-grass.component.css']
+  styleUrls: ['./all-synthetic-grass.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AllSyntheticGrassComponent implements OnInit {
+export class AllSyntheticGrassComponent implements OnInit, OnDestroy {
   syntheticGrasses;
   @Input() syntheticGrassSelected;
   @Input() currentLst;
@@ -19,10 +20,12 @@ export class AllSyntheticGrassComponent implements OnInit {
   
   loadSyntheticGrassTypeByTypeSubscription: Subscription;
 
-  constructor(private syntheticGrassService: SyntheticGrassService) {  }
+  constructor(private syntheticGrassService: SyntheticGrassService) { 
+  
+    }
 
   ngOnInit(): void {
-    var item = this.syntheticGrasses?.find(x => x == "all synthetic grasses");
+    var item = this.syntheticGrasses?.find(x => x == "all synthetic grass");
     this.selectTypeOfSyntheticGrass(item); 
   }
 
@@ -34,7 +37,7 @@ export class AllSyntheticGrassComponent implements OnInit {
 
   syntheticGrassDetails(syntheticGrass: SyntheticGrass) {
     this.isSelectedItem = true;
-    this.syntheticGrassSelected = syntheticGrass
+    this.syntheticGrassSelected = syntheticGrass;
   }
 
   selectTypeOfSyntheticGrass(typeOfSyntheticGrass) {
@@ -60,9 +63,4 @@ export class AllSyntheticGrassComponent implements OnInit {
     this.syntheticGrassSelected = null; 
   }
 
-  // @Input() prop: number = 0;
-
-  // ngOnChanges(changes: SimpleChanges) {
-  //   changes.prop;
-  // }
 }

@@ -1,7 +1,7 @@
 .container-fluid {
-    border-color: black;
+    border-color: green;
     width: 100%;
-    background-color: black; 
+    background-color: green; 
 }
 
 #navBar {
@@ -12,7 +12,7 @@
     a {
         color: white;
         &:visited {
-            background: gray;
+            background: black;
             color: white;
         }
         &:active {
@@ -21,7 +21,7 @@
    
     &:hover {
         color: white;
-        background-color: gray;
+        background-color: black;
         display: inline-block;   
     } 
 }

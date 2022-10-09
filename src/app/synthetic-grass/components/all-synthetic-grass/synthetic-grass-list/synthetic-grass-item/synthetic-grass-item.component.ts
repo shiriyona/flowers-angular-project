@@ -18,4 +18,5 @@ export class SyntheticGrassItemComponent implements OnInit {
   onSelected() {
     this.syntheticGrassSelected.emit(this.syntheticGrass);
   }
+
 }

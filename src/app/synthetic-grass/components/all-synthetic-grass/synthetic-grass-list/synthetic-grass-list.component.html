@@ -2,7 +2,7 @@
     <div class="row">
       <div class="col-xs-12">
         <app-synthetic-grass-item 
-          *ngFor="let syntheticGrass of syntheticGrasses"    
+          *ngFor="let syntheticGrassEl of syntheticGrasses"    
           [syntheticGrass]="syntheticGrassEl"
           (syntheticGrassSelected)="onSyntheticGrassItemSelected($event)">
         </app-synthetic-grass-item>

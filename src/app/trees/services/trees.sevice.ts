@@ -15,85 +15,106 @@ private fruitTrees: Tree[] = [
   new Tree(
     'olive tree',
     'a fruit olive tree it is an evergreen tree',
-    'src/assets/img/my-olive-tree.jpg',
+    '../../../../assets/img/my-olive-tree.jpg',
     10
 ),
   new Tree(
     'pomegranate tree',
     'a fruit pomegranate tree it is a dropping out tree',
-    'src/assets/img/my-pomegranate-tree.jpg',
+    '../../../../assets/img/my-pomegranate-tree.jpg',
     4
   ),
   new Tree(
-    'pomegranate tree',
+    'carob tree',
     'a fruit carob tree it is an evergreen tree',
-    'src/assets/img/my-carob-tree.jpg',
+    '../../../../assets/img/my-carob-tree.jpg',
+    4
+  ),
+  new Tree(
+    'ficus carica tree',
+    'a fruit ficus carica tree it is a dropping out tree',
+    '../../../../assets/img/my-ficus-carica-tree.jpg',
+    4
+  ),
+  new Tree(
+    'phoenix dactylifera tree',
+    'a fruit phoenix dactylifera tree it is an evergreen tree',
+    '../../../../assets/img/my-phoenix-dactylifera-tree.jpg',
+    4
+  ),
+  new Tree(
+    'orange tree',
+    'a fruit orange tree it is an evergreen tree',
+    '../../../../assets/img/my-orange-tree.jpg',
+    4
+  ),
+  new Tree(
+    'clementine tree',
+    'a fruit clementine tree it is an evergreen tree',
+    '../../../../assets/img/my-clementine-tree.jpg',
+    4
+  ),
+  new Tree(
+    'pear tree',
+    'a fruit pear tree it is an evergreen tree',
+    '../../../../assets/img/my-pear-tree.jpg',
+    4
+  ),
+  new Tree(
+    'apple tree',
+    'a fruit apple tree it is an evergreen tree',
+    '../../../../assets/img/my-apple-tree.jpg',
     4
   ),
   new Tree(
     'pomegranate tree',
     'a fruit pomegranate tree it is an dropping out tree',
-    'src/assets/img/my-pomegranate-tree.jpg',
-    4
-  ),
-  new Tree(
-    'pomegranate tree',
-    'a fruit pomegranate tree it is an dropping out tree',
-    'src/assets/img/my-pomegranate-tree.jpg',
-    4
-  ),
-  new Tree(
-    'pomegranate tree',
-    'a fruit pomegranate tree it is an dropping out tree',
-    'src/assets/img/my-pomegranate-tree.jpg',
-    4
-  ),
-  new Tree(
-    'pomegranate tree',
-    'a fruit pomegranate tree it is an dropping out tree',
-    'src/assets/img/my-pomegranate-tree.jpg',
-    4
-  ),
-  new Tree(
-    'pomegranate tree',
-    'a fruit pomegranate tree it is an dropping out tree',
-    'src/assets/img/my-pomegranate-tree.jpg',
-    4
-  ),
-  new Tree(
-    'pomegranate tree',
-    'a fruit pomegranate tree it is an dropping out tree',
-    'src/assets/img/my-pomegranate-tree.jpg',
-    4
-  ),
-  new Tree(
-    'pomegranate tree',
-    'a fruit pomegranate tree it is an dropping out tree',
-    'src/assets/img/my-pomegranate-tree.jpg',
+    '../../../../assets/img/my-pomegranate-tree.jpg',
     4
   )
 ];
 
 private idleTrees: Tree[] = [
   new Tree(
-    'Tropical1',
-    'this is Tropical1 description',
-    'https://i.vimeocdn.com/video/1008844994-6476435f2dcb0ec69f4dd8fa355fb3eb11d86420d0b985ebf6b26e7916172ba7-d_640x360.jpg',
-    47
-),
-  new Tree('2',
-    'this is 2 description',
-    'https://i.vimeocdn.com/video/1405420561-7c90de9556c154b6a5ae18f3c7781fc7cb4e64a3688dedefe329c764f33f6962-d_640x360.jpg',
-    678
-  )
+    'oak tree',
+    'an idle oak tree it is an evergreen tree',
+    '../../../../assets/img/my-oak-tree.jpg',
+    4
+  ),
+  new Tree(
+    'ficus microcarpa tree',
+    'an idle ficus microcarpa tree it is an evergreen tree',
+    '../../../../assets/img/my-ficus-microcarpa-tree.jpg',
+    4
+  ),
+  new Tree(
+    'tipuana tipu tree',
+    'an idle tipuana tipu tree it is an evergreen tree',
+    '../../../../assets/img/my-tipuana-tipu-tree.jpg',
+    4
+  ),
+  new Tree(
+    'pine tree',
+    'an idle pine tree it is an evergreen tree',
+    '../../../../assets/img/my-pine-tree.jpg',
+    4
+  ),
+  new Tree(
+    'eucalyptus- tree',
+    'an idle eucalyptus tree it is an evergreen tree',
+    '../../../../assets/img/my-eucalyptus-tree.jpg',
+    4
+  ),
+  new Tree(
+    'schinus terebinthifolius tree',
+    'an idle schinus terebinthifolius tree it is an evergreen tree',
+    '../../../../assets/img/my-schinus-terebinthifolius-tree.jpg',
+    4
+  ),
 ];
 
 onAllTreesType():Observable<any> {
     return of(this.treessType.slice());
-}
-
-allItem() {
-  this.allTrees = this.allTrees.push(Tree, this.fruitTrees, this.idleTrees);
 }
 
 loadTreeByType(treeType):Observable<any>  { 
@@ -101,11 +122,16 @@ loadTreeByType(treeType):Observable<any>  {
         case 'all trees': 
         return of([...this.fruitTrees, ...this.idleTrees]);
         console.log()
-        case 'all trees': return of(this.allTrees.slice())
-        case 'fruit trees': return of(this.fruitTrees.slice()); 
+        break;
+        case 'fruit trees': return of(this.fruitTrees.slice());
+        break; 
         case 'idle trees': return of(this.idleTrees.slice());
-    }
-    return of([...this.fruitTrees, ...this.idleTrees]);
+        break;
+        default:
+        return of([...this.fruitTrees, ...this.idleTrees]);
         console.log()
+        break;
+    }
 }
+
 }

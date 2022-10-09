@@ -24,5 +24,5 @@ export class SyntheticGrassListComponent implements OnInit {
     this.isSelectedItem = true;
     this.syntheticGrassSelected.emit(syntheticGrass);
   }
-
+  
 }

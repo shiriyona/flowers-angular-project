@@ -1,7 +1,8 @@
-<div class="col-xs-12">
-    <h4 class="syntheticGrasssTitle">Synthetic Grasses</h4>
+<form>
+  <div class="col-xs-12">
+    <h4 class="syntheticGrassTitle">SyntheticGrass</h4>
     <mat-form-field appearance="fill" (click)="getAllSyntheticGrassType()">
-      <mat-label *ngIf="syntheticGrassSelected">synthetic grass</mat-label>
+      <mat-label *ngIf="syntheticGrassSelected">syntheticGrass</mat-label>
       <mat-select value="all synthetic grass">
         <mat-option *ngFor="let syntheticGrass of syntheticGrasses" [value]="syntheticGrass"
         (click)="selectTypeOfSyntheticGrass(syntheticGrass)">
@@ -10,29 +11,31 @@
       </mat-select>
     </mat-form-field>
   </div>
-  <div class="parentSyntheticGrass">   
-    <div class="childSyntheticGrassList fullScreen" [ngClass]="{'partScreen': isSelectedItem , 'fullScreen': !isSelectedItem}">
-      <app-synthetic-grass-list [syntheticGrasses]="currentLst" (syntheticGrassSelected)="syntheticGrassDetails($event)"></app-synthetic-grass-list>   
-    </div>
-    <div class="childSyntheticGrassItem fullScreen">
-    <div class="row">
-      <div class="col-md-7">
-        <div class="eachItem">
-          <app-synthetic-grass-detail
-          (removeSelectedItem)="onRemoveSelectedItem($event)"
-          *ngIf="syntheticGrassSelected"
-          [syntheticGrass]="syntheticGrassSelected">
-          </app-synthetic-grass-detail>
-        </div>
+</form>
+<div class="parentSyntheticGrass">   
+  <div class="childSyntheticGrassList fullScreen" [ngClass]="{'partScreen': isSelectedItem , 'fullScreen': !isSelectedItem}">
+    <app-synthetic-grass-list 
+    [syntheticGrasses]="currentLst" (syntheticGrassSelected)="syntheticGrassDetails($event)">
+    </app-synthetic-grass-list>   
+  </div>
+  <div class="childSyntheticGrassItem fullScreen">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="eachItem">
+        <app-synthetic-grass-detail
+        (removeSelectedItem)="onRemoveSelectedItem($event)"
+        *ngIf="syntheticGrassSelected"
+        [syntheticGrass]="syntheticGrassSelected">
+        </app-synthetic-grass-detail>
       </div>
-        <ng-template #infoText>
-          <p>Please select a syntheticGrass!</p>
-        </ng-template> 
-     </div>  
-   </div>
-  </div> 
-  
-  
-  
-  
-  
+    </div>
+      <ng-template #infoText>
+        <p>Please select a syntheticGrass!</p>
+      </ng-template> 
+   </div>  
+ </div>
+</div> 
+
+
+
+

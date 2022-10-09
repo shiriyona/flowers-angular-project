@@ -10,13 +10,12 @@ export class SyntheticGrassService {
         'medium',
         'thick' 
       ];
-      allSyntheticGrasses;
 
     private thin: SyntheticGrass[] = [
       new SyntheticGrass(
         'thin',
         'a thin synthetic grass 10 millimeter fibers per height',
-        'src/assets/img/my-thin-synthetic-grass.jpg',
+        '../../../../assets/img/my-thin-synthetic-grass.jpg',
         15
     )
     ];
@@ -25,7 +24,7 @@ export class SyntheticGrassService {
       new SyntheticGrass(
         'medium',
         'a medium synthetic grass 25 millimeter fibers per height',
-        'src/assets/img/my-medium-synthetic-grass.jpg',
+        '../../../../assets/img/my-medium-synthetic-grass.jpg',
         68
     )
     ];
@@ -34,7 +33,7 @@ export class SyntheticGrassService {
       new SyntheticGrass(
         'thick',
         'a thick synthetic grass 40 millimeter fibers per height',
-        'src/assets/img/my-thick-synthetic-grass.jpg',
+        '../../../../assets/img/my-thick-synthetic-grass.jpg',
         68
     )
     ];
@@ -43,21 +42,23 @@ export class SyntheticGrassService {
         return of(this.syntheticGrassesType.slice());
     }
 
-    allItem() {
-      this.allSyntheticGrasses = this.allSyntheticGrasses.push(SyntheticGrass, this.thin, this.medium);
-    }
-
     loadSyntheticGrassByType(syntheticGrassType):Observable<any>  { 
         switch(syntheticGrassType) {
             case 'all synthetic grass': 
             return of([...this.thin, ...this.medium]);
             console.log()
-            case 'all synthetic grass': return of(this.allSyntheticGrasses.slice())
+            break;
             case 'thin': return of(this.thin.slice()); 
+            break;
             case 'medium': return of(this.medium.slice());
+            break;
             case 'thick': return of(this.thick.slice());
-        }
-        return of([...this.thin, ...this.medium, ...this.thick]);
+            break;
+            default:
+            return of([...this.thin, ...this.medium, ...this.thick]);
             console.log()
+            break;
+        }
+       
     }
 }

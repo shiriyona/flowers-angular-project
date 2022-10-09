@@ -1,13 +1,17 @@
-<h4>Basic mat-select</h4>
+<form>
+  <div class="col-xs-12">
+  <h4 class="bushesTitle">Bushes</h4>
 <mat-form-field appearance="fill" (click)="getAllBushesType()">
   <mat-label *ngIf="bushSelected">bushes</mat-label>
   <mat-select value="all bushes">
-    <mat-option *ngFor="let bush of bushes" [value]="bush.value" 
+    <mat-option *ngFor="let bush of bushes" [value]="bush" 
     (click)="selectTypeOfBush(bush)">
-      {{bush.viewValue}}
+      {{bush}}
     </mat-option>
   </mat-select>
 </mat-form-field>
+</div>
+</form>
 <div class="parentBush">   
     <div class="childBushList fullScreen" [ngClass]="{'partScreen': isSelectedItem , 'fullScreen': !isSelectedItem}">
       <app-bushes-list [bushes]="currentLst" (bushSelected)="bushDetails($event)"></app-bushes-list>   

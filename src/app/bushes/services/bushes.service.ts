@@ -1,60 +1,67 @@
 import { Observable, of, Subscription, subscribeOn } from "rxjs";
 import { Bush } from "../model/bushes.model";
 
-interface BushTypes {
-    value: string;
-    viewValue: string;
-  }
 
 export class BushesService {
-    bushesTypes: BushTypes[] = [
-        {value: 'all bushes', viewValue: 'all bushes'},
-        {value: 'scented', viewValue: 'scented'},
-        {value: 'unscented', viewValue: 'unscented'},
+    bushesTypes: string[] = [
+        'all bushes',
+        'scented',
+        'unscented'
       ];
-
-      allBushes;
     
     private scented: Bush[] = [
         new Bush(
-        'scented',
-        'this is necklace1 description',
-        'https://cdn.pixabay.com/photo/2017/08/02/01/34/pocket-watch-2569573__340.jpg' ,
+        'jasminum',
+        'a scented exists in white rash',
+        '../../../../assets/img/my-jasminum-bush.jpg' ,
         2    
     ),
-        new Bush('scented',
-        'this is necklace2 description',
-        'https://cdn.pixabay.com/photo/2016/03/03/17/25/beads-1234666__340.jpg',
-        5 
+    new Bush(
+        'combretum indicum',
+        'a scented combretum indicum bush exists in pink rash',
+        '../../../../assets/img/my-combretum-indicum-bush.jpg' ,
+        2    
     ),
-    new Bush('scented',
-    'this is necklace3 description',
-    'https://cdn.pixabay.com/photo/2017/08/06/05/19/invitation-2589041__340.jpg', 
-    7
-)
+    new Bush(
+        'rose',
+        'a scented rose bush exists in white rash',
+        '../../../../assets/img/my-rose-bush.jpg' ,
+        2    
+    ),
+    new Bush(
+        'brunfelsia pauciflora',
+        'a scented brunfelsia pauciflora bush exists in white, purple and pink rash',
+        '../../../../assets/img/my-brunfelsia-pauciflora-bush.jpg' ,
+        2    
+    ),
+    new Bush(
+        'lavandula',
+        'a scented lavandula bush exists in purple rash',
+        '../../../../assets/img/my-lavandula-bush.jpg' ,
+        2    
+    ),
     ];
 
     private unscented: Bush[] = [
-        new Bush('bracelet1',
-        'this is bracelet1 description',
-        'https://cdn.pixabay.com/photo/2014/03/06/21/57/coffer-281253__340.jpg',
-        5     
+    new Bush(
+        'cordyline',
+        'a unscented cordyline bush exists in purple rash',
+        '../../../../assets/img/my-cordyline-bush.jpg' ,
+        2      
     ),
-        new Bush('bracelet2',
-        'this is necklace2 description',
-        'https://cdn.pixabay.com/photo/2018/05/10/20/03/love-3388626__340.jpg',
-        6   
+    new Bush(
+        'hibiscus',
+        'a unscented hibiscus bush exists in all colors',
+        '../../../../assets/img/my-hibiscus-bush.jpg' ,
+        2      
     ),
-        new Bush('bracelet3',
-        'this is necklace3 description',
-        'https://cdn.pixabay.com/photo/2016/02/13/22/48/bracelet-1198737_960_720.jpg',
-        6   
-        )
+    new Bush(
+        'rhus-',
+        'a unscented rhus- bush exists with green leave',
+        '../../../../assets/img/my-rhus-bush.jpg' ,
+        2      
+    )
     ];
-
-    allItem() {
-       this.allBushes = this.allBushes.push(Bush, this.unscented, this.scented);
-    }
 
     onAllBushesType():Observable<any> {
         return of(this.bushesTypes.slice());
@@ -65,9 +72,15 @@ export class BushesService {
             case 'all bushes': 
             return of([...this.scented, ...this.unscented]);
             console.log()
-            // case 'all bushes': return of(this.allBushes.slice())
+            break;
             case 'scented': return of(this.scented.slice()); 
+            break
             case 'unscented': return of(this.unscented.slice());
+            break;
+            default:
+            return of([...this.scented, ...this.unscented]);
+            console.log()
+            break;
         }
     }
 }

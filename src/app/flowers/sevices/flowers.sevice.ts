@@ -13,73 +13,73 @@ export class FlowersService {
 
       allFlowers;
 
-    private winter: Flower[] = [
+    private summer: Flower[] = [
       new Flower(
         'vinca',
-        'a winter flower exists in all colors',
+        'a summer flower exists in all colors',
         '../../../../assets/img/my-vinca-flower.jpg',
         50
     ),
       new Flower(
         'tagetes',
-        'a winter flower exists in orange and yellow',
+        'a summer flower exists in orange and yellow',
         '../../../../assets/img/my-tagetes-flower.jpg',
         58
       ),
       new Flower(
       'petunia',
-      'a winter flower exists in purple red white and lilac',
+      'a summer flower exists in purple red white and lilac',
       '../../../../assets/img/my-petunia-flower.jpg',
       58
     ),
     new Flower(
     'portulca',
-    'a winter flower exists in red pink and yellow',
+    'a summer flower exists in red pink and yellow',
     '../../../../assets/img/my-portulca-flower.jpg',
     58
     ),
     new Flower(
     'celosia',
-    'a winter flower exists in red, pink, purple, orange and yellow',
+    'a summer flower exists in red, pink, purple, orange and yellow',
     '../../../../assets/img/my-celosia-flower.jpg',
     58
     ),
     new Flower(
     'cynicism ',
-    'a winter flower exists in pink, orange and yellow',
+    'a summer flower exists in pink, orange and yellow',
     '../../../../assets/img/my-cynicism-flower.jpg',
     58
     )   
   ];
 
-  private summer: Flower[] = [
+  private winter: Flower[] = [
     new Flower(
       'viola tricolor',
-      'a summer flower exists in purple, white, red and yellow',
+      'a winter flower exists in purple, white, red and yellow',
       '../../../../assets/img/my-viola-tricolor-flower.jpg',
       68
     ),
     new Flower(
       'antirrhinum',
-      'a summer flower exists in purple, pink, orange, white, red and yellow',
-      '../../../../assets/img/my-viola-tricolor-flower.jpg',
+      'a winter flower exists in purple, pink, orange, white, red and yellow',
+      '../../../../assets/img/my-antirrhinum-flower.jpg',
       90
     ),
     new Flower(
     'lobularia maritimam',
-    'a summer flower exists in purple and white',
+    'a winter flower exists in purple and white',
     '../../../../assets/img/my-lobularia-maritimam-flower.jpg',
     90
     ),
   new Flower(
   'cyclamen',
-  'a summer flower exists in purple, pink, orange, white and red',
+  'a winter flower exists in purple, pink, orange, white and red',
   '../../../../assets/img/my-cyclamen-flower.jpg',
   90
   ),
 new Flower(
 'tropaeolum majus',
-'a summer flower exists in purple, pink, orange, white, red and yellow',
+'a winter flower exists in purple, pink, orange, white, red and yellow',
 '../../../../assets/img/my-tropaeolum-majus-flower.jpg',
 90
 )
@@ -87,34 +87,33 @@ new Flower(
 
 private multiSeasonal: Flower[] = [
   new Flower(
-    'Geranium',
-    'פרח חורפי קיים בכל הצבעים',
-    '../../../../assets/img/my-tropaeolum-majus-flower.jpg',
+    'geranium',
+    'a multi-seasonal flower exists in purple, pink, orange, white, red and yellow',
+    '../../../../assets/img/my-geranium-flower.jpg',
     50
 ),
-  new Flower('טגטס',
-    'this is rose2 description',
-    '../../../../assets/img/my-tropaeolum-majus-flower.jpg',
+  new Flower(
+    'impatiens',
+    'a multi-seasonal flower exists in purple, pink, orange, white, red and yellow',
+    '../../../../assets/img/my-impatiens-flower.jpg',
     58
   ),
-  new Flower('פטוניה',
-  'this is rose2 description',
-  '../../../../assets/img/my-tropaeolum-majus-flower.jpg',
+  new Flower(
+  'pentas',
+  'a multi-seasonal flower exists in purple, pink, orange, white, red and yellow',
+  '../../../../assets/img/my-pentas-flower.jpg',
   58
 ),
-new Flower('פורטולקה',
-'this is rose2 description',
-'../../../../assets/img/my-tropaeolum-majus-flower.jpg',
+new Flower(
+'kalanchoe',
+'a multi-seasonal flower exists in purple, pink, orange, white, red and yellow',
+'../../../../assets/img/my-kalanchoe-flower.jpg',
 58
 ),
-new Flower('צולוסיה מחשיפה',
-'this is rose2 description',
-'../../../../assets/img/my-tropaeolum-majus-flower.jpg',
-58
-),
-new Flower('ציניה עדינה',
-'this is rose2 description',
-'../../../../assets/img/my-tropaeolum-majus-flower.jpg',
+new Flower(
+'dianthus chinensis',
+'a multi-seasonal flower exists in purple, pink, orange, white, red and yellow',
+'../../../../assets/img/my-dianthus-chinensis-flower.jpg',
 58
 )   
 ];
